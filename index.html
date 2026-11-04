@@ -3,251 +3,269 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Michigan Office of State Intelligence | OSI</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+<title>Michigan State Police</title>
+<link rel="icon" type="image/png" href="/msp/images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --navy:#243458; --navy-2:#34508f; --blue:#2f4f95; --gold:#e8c064; --gold-d:#8f6c14;
+  --paper:#f4f2ec; --white:#fff; --ink:#1a2236; --muted:#5b6479; --line:#dcd8cc; --black:#141c30; --gold-hover:#d5aa45;
+  --head:'Source Serif 4',Georgia,serif; --ui:'Public Sans',system-ui,sans-serif;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ui);background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:var(--blue)}
+a:hover{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid #2491ff;outline-offset:2px}
+svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
 
-body {
-  background: #05070d;
-  color: #e6edf3;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+.banner{background:var(--black);color:#e3e7f1;font-size:14px;padding:7px 0}
+.banner .wrap{display:flex;gap:10px;align-items:flex-start}
+.banner i{font-style:normal;flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--gold);color:var(--black);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.banner strong{color:#fff}
+
+header.top{background:#fff;border-bottom:4px solid var(--gold);position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(11,37,69,.1)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:88px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}
+.logo{height:70px;width:auto;flex-shrink:0}
+.brand small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;line-height:1.2}
+.brand b{display:block;font-family:var(--head);font-size:25px;line-height:1.1;color:var(--navy)}
+nav.main ul{list-style:none;display:flex;gap:2px;align-items:center}
+nav.main a{display:block;white-space:nowrap;padding:10px 13px;color:var(--navy);text-decoration:none;font-weight:600;font-size:15.5px;border-bottom:3px solid transparent}
+nav.main a:hover,nav.main a.cur{color:var(--navy);border-bottom-color:var(--gold)}
+nav.main a.cta{background:var(--gold);color:var(--black);border-radius:3px;margin-left:8px;border-bottom-color:transparent}
+nav.main a.cta:hover{background:var(--gold-hover)}
+.menu-btn{display:none;background:var(--navy);color:#fff;border:0;font:inherit;font-weight:700;padding:9px 16px;border-radius:3px;cursor:pointer}
+
+.hero{background:linear-gradient(135deg,#1c2a4a 0%,#2b4075 100%);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-150px;width:540px;height:540px;border-radius:50%;border:76px solid rgba(232,192,100,.10)}
+.hero::after{content:"";position:absolute;right:160px;bottom:-230px;width:380px;height:380px;border-radius:50%;border:44px solid rgba(255,255,255,.04)}
+.hero-in{position:relative;padding:68px 0 76px;max-width:800px}
+.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:13px}
+.hero h1{font-family:var(--head);font-size:56px;line-height:1.05;margin:10px 0 16px;letter-spacing:-.01em}
+.hero p{color:#d3dbec;font-size:19px;max-width:660px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;font:inherit;font-weight:700;font-size:16px;text-decoration:none;background:var(--gold);color:var(--black);border:2px solid var(--gold);border-radius:3px;padding:11px 24px}
+.btn:hover{background:var(--gold-hover);border-color:var(--gold-hover);color:var(--black)}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--navy)}
+
+.emerg{background:var(--gold);color:#1a2236;font-weight:600;font-size:15.5px}
+.emerg .wrap{padding-top:11px;padding-bottom:11px;display:flex;gap:10px;align-items:center}
+.emerg svg{width:20px;height:20px;flex-shrink:0}
+
+section.blk{padding:64px 0 0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d)}
+.sec-h{margin-bottom:24px;max-width:760px}
+.sec-h h2{font-family:var(--head);font-size:34px;color:var(--navy);line-height:1.15;margin-top:2px}
+.sec-h p{color:var(--muted);margin-top:8px}
+
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.chip{background:#fff;border:2px solid var(--navy);color:var(--navy);font-weight:700;font-size:15px;text-decoration:none;border-radius:30px;padding:7px 18px}
+.chip:hover{background:var(--navy);color:#fff}
+
+.bureau{background:var(--navy);color:#fff;border-radius:6px;border-left:8px solid var(--gold);padding:30px 34px;margin-bottom:22px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.bureau svg{width:52px;height:52px;color:var(--gold)}
+.bureau .tg{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.bureau h3{font-family:var(--head);font-size:30px;line-height:1.15}
+.bureau p{color:#d3dbec;margin-top:4px;max-width:76ch}
+
+.divs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.div{background:#fff;border:1px solid var(--line);border-top:5px solid var(--navy-2);border-radius:4px;padding:26px 30px;scroll-margin-top:110px}
+.div.wide{grid-column:1/-1;border-top-color:var(--gold)}
+.div .tg{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.div h3{font-family:var(--head);font-size:24px;color:var(--navy);line-height:1.2;margin:2px 0 6px}
+.div > p{color:#34405a}
+.units{list-style:none;margin-top:18px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.units li{padding:16px 22px 16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:36px 1fr;gap:2px 12px}
+.units li:nth-child(even){padding:16px 0 16px 22px;border-left:1px solid var(--line)}
+.units li:last-child{border-bottom:0}
+.units li:nth-last-child(2):nth-child(odd){border-bottom:0}
+.units .ic{grid-row:span 2;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center}
+.units .ic svg{width:19px;height:19px}
+.units b{color:var(--ink);font-size:17px;line-height:1.3}
+.units span.d{font-size:15px;color:var(--muted)}
+
+footer{margin-top:72px;background:var(--black);color:#e3e7f1}
+.f-top{background:#fff;border-top:5px solid var(--gold);padding:38px 0}
+.f-brand{display:flex;justify-content:center;align-items:center;gap:20px;text-decoration:none;color:var(--navy)}
+.f-brand .logo{height:92px}
+.f-brand small{display:block;font-family:var(--head);font-size:17px;font-weight:600}
+.f-brand b{display:block;font-family:var(--head);font-size:34px;line-height:1.05}
+.f-links{padding:40px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px 36px}
+.f-links a{color:#fff;font-size:17.5px;line-height:1.35}
+.f-links a:hover{color:var(--gold)}
+.f-links h4{color:var(--gold);font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.f-links div{display:flex;flex-direction:column;gap:10px}
+.f-fine{border-top:1px solid #33426a;padding:18px 0 26px;font-size:14px;color:#a3afc9}
+.top-btn{position:fixed;right:24px;bottom:24px;width:62px;height:62px;border-radius:50%;background:var(--navy-2);color:#fff;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;font:inherit;font-weight:700;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .2s}
+.top-btn.show{opacity:1;pointer-events:auto}
+.top-btn svg{width:20px;height:20px}
+
+@media(max-width:1080px){
+  .menu-btn{display:block}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:4px solid var(--gold);box-shadow:0 12px 24px rgba(0,0,0,.12);padding:8px 24px 16px}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;align-items:stretch;gap:0}
+  nav.main a{padding:12px 0;border-bottom:1px solid var(--line)}
+  nav.main a.cta{margin:10px 0 0;text-align:center}
 }
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+@media(max-width:900px){
+  .divs{grid-template-columns:1fr}
+  .f-links{grid-template-columns:1fr 1fr}
 }
-
-header {
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.5);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.logo {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 2px;
-}
-
-.logo span {
-  color: #58a6ff;
-}
-
-nav a {
-  color: #c9d1d9;
-  text-decoration: none;
-  margin-left: 30px;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #58a6ff;
-}
-
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 80px;
-}
-
-.hero h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 54px;
-  max-width: 800px;
-  line-height: 1.1;
-  background: linear-gradient(90deg, #58a6ff, #79c0ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #8b949e;
-  max-width: 650px;
-}
-
-.buttons {
-  margin-top: 40px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  margin-right: 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-primary {
-  background: #1f6feb;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #388bfd;
-  transform: translateY(-3px);
-}
-
-.btn-secondary {
-  border: 1px solid #30363d;
-  color: #c9d1d9;
-}
-
-.btn-secondary:hover {
-  border-color: #58a6ff;
-  color: #58a6ff;
-  transform: translateY(-3px);
-}
-
-.section {
-  padding: 100px 80px;
-}
-
-.section h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 34px;
-  margin-bottom: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 12px;
-  transition: 0.4s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  border-color: #58a6ff;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 14px;
-  color: #6e7681;
-  border-top: 1px solid rgba(255,255,255,0.05);
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .hero h1{font-size:38px}
+  .hero p{font-size:17px}
+  .hero-in{padding:46px 0 56px}
+  .bureau{grid-template-columns:1fr;padding:26px 24px}
+  .div{padding:24px 22px}
+  .units{grid-template-columns:1fr}
+  .units li,.units li:nth-child(even){padding:14px 0;border-left:0}
+  .units li:nth-last-child(2):nth-child(odd){border-bottom:1px solid var(--line)}
+  .units li:last-child{border-bottom:0}
+  .f-links{grid-template-columns:1fr}
+  .f-brand{flex-direction:column;text-align:center}
+  .brand b{font-size:21px}
+  .logo{height:56px}
+  .sec-h h2{font-size:28px}
 }
 </style>
 </head>
-
 <body>
 
-<canvas id="matrix"></canvas>
+<div class="banner" role="note"><div class="wrap"><i aria-hidden="true">!</i>
+  <span><strong>This is not an official government website.</strong> This site is a simulated government interface and does not represent any real government body or authority.</span></div></div>
 
-<header>
-  <div class="logo">MICHIGAN <span>OSI</span></div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="about">About</a>
-    <a href="careers">Careers</a>
-    <a href="report">Report a Threat</a>
-  </nav>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="https://migovt.org/msp/">
+      <img class="logo" src="https://migovt.org/msp/images/logo.png" alt="">
+      <span><small>State of Michigan</small><b>Michigan State Police</b></span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <ul>
+        <li><a class="cur" href="https://migovt.org/msp/">Home</a></li>
+        <li><a href="https://migovt.org/msp/#field-services">Field Services</a></li>
+        <li><a href="https://migovt.org/msp/careers/">Careers</a></li>
+        <li><a href="https://migovt.org/msp/contact/">Contact</a></li>
+        <li><a class="cta" href="https://migovt.org/msp/tips/">Submit a Tip</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-  <h1>Protecting the Sovereignty, Security, and Interests of the State of Michigan</h1>
-  <p>
-    The Office of State Intelligence (OSI) is a principal office within the executive branch of Michigan, responsible for the collection, analysis, and dissemination of intelligence relating to threats to this state — including foreign intelligence, counterintelligence, cyber threats, terrorism, and espionage.
-  </p>
-  <div class="buttons">
-    <a href="#" class="btn btn-primary">Apply for Service</a>
-    <a href="#" class="btn btn-secondary">Report a Threat</a>
-  </div>
+  <div class="wrap"><div class="hero-in">
+    <div class="eyebrow">State of Michigan</div>
+    <h1>Michigan State Police</h1>
+    <p>Michigan's statewide law enforcement agency, providing patrol, investigative, and specialized public safety services across the state.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://migovt.org/msp/#field-services">Explore the Department</a>
+      <a class="btn ghost" href="https://migovt.org/msp/careers/">Careers</a>
+    </div>
+  </div></div>
 </section>
+<div class="emerg"><div class="wrap">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v5M12 17.5v.01"/></svg>
+  <span>In an emergency, call 911.</span>
+</div></div>
 
-<section class="section">
-  <h2>Core Responsibilities</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Foreign Intelligence</h3>
-      <p>Monitoring and assessing foreign activities impacting Michigan’s economic, technological, and security interests.</p>
+<main>
+<div class="wrap">
+  <section class="blk" id="field-services">
+    <div class="sec-h"><div class="kicker">Organization</div><h2>How the Department is organized</h2></div>
+
+    <div class="chips" aria-label="Jump to a division">
+      <a class="chip" href="#field-operations">Field Operations</a>
+      <a class="chip" href="#cve">Commercial Vehicle Enforcement</a>
+      <a class="chip" href="#special-operations">Special Operations</a>
+      <a class="chip" href="#investigations">Investigations and Intelligence</a>
     </div>
-    <div class="card">
-      <h3>Counterintelligence</h3>
-      <p>Identifying and disrupting espionage, infiltration, and unlawful foreign influence within the state.</p>
+
+    <div class="bureau">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div><div class="tg">Bureau</div><h3>Field Services Bureau</h3>
+        <p>Oversees uniformed patrol, highway enforcement, and specialized tactical operations conducted in the field.</p></div>
     </div>
-    <div class="card">
-      <h3>Cyber Defense</h3>
-      <p>Detecting and mitigating cyber threats targeting state infrastructure, public systems, and industry.</p>
+
+    <div class="divs">
+      <div class="div" id="field-operations"><span class="tg">Division</span><h3>Field Operations Division</h3>
+        <p>Troopers who patrol state highways and communities, respond to calls for service, and enforce traffic law.</p></div>
+
+      <div class="div" id="cve"><span class="tg">Division</span><h3>Commercial Vehicle Enforcement Division</h3>
+        <p>Inspects commercial trucks and buses and enforces weight, safety, and hazardous-materials regulations.</p></div>
+
+      <div class="div wide" id="special-operations"><span class="tg">Division</span><h3>Special Operations Division</h3>
+        <p>Houses the department's specialized tactical and emergency-response teams, deployed for high-risk or unusual incidents.</p>
+        <ul class="units">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span><b>Emergency Support Team</b><span class="d">A tactical response and crisis-negotiation team deployed for high-risk incidents such as barricaded suspects and hostage situations.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13l5-2v4l-5-2M8 12l-2-5h3l3 5M8 12l-2 5h3l3-5M3 12 1 9"/></svg></span><b>Aviation Unit</b><span class="d">Operates helicopters and fixed-wing aircraft in support of search and rescue, pursuits, and aerial surveillance.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="14" r="7"/><path d="M15.500 9 18 6.500M17 4l3 3M18 3.500l.8-.8"/></svg></span><b>Bomb Squad</b><span class="d">Handles explosive-ordnance disposal, suspicious-package response, and post-blast investigations.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h18l-2.500 5h-13zM12 4v11M12 5l6 8h-6M2 21c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/></svg></span><b>Marine Services Team</b><span class="d">Patrols the state's lakes and waterways, enforcing boating safety laws and assisting in water rescues.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M6 16l4-8h5l3 8M10 8H8M15 8l-3 8"/></svg></span><b>Tactical Bike Team</b><span class="d">Provides bicycle-mounted patrol for crowded events, campuses, and dense urban areas.</span></li>
+        </ul></div>
+
+      <div class="div wide" id="investigations"><span class="tg">Division</span><h3>Investigations and Intelligence Division</h3>
+        <p>Coordinates major criminal investigations and the sharing of intelligence across local, state, and federal law enforcement.</p>
+        <ul class="units">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.300-4.300"/></svg></span><b>Criminal Investigations Unit</b><span class="d">Investigates major crimes that require specialized expertise or coordination across multiple jurisdictions.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.500"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="m6.500 7.500 3.300 3M17.500 7.500l-3.300 3M6.500 16.500l3.300-3M17.500 16.500l-3.300-3"/></svg></span><b>Michigan Intelligence Operations Center</b><span class="d">A fusion center that gathers, analyzes, and shares criminal and public-safety intelligence with partner agencies.</span></li>
+        </ul></div>
     </div>
-    <div class="card">
-      <h3>Intelligence Assessments</h3>
-      <p>Providing intelligence briefings to the Governor and authorized state officials.</p>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
+</main>
 
 <footer>
-  This website is not affiliated with, endorsed by, or officially connected to any official government, agency, or official entity.
+  <div class="f-top"><div class="wrap">
+    <a class="f-brand" href="https://migovt.org/msp/">
+      <img class="logo" src="https://migovt.org/msp/images/logo.png" alt="">
+      <span><small>State of Michigan</small><b>Michigan State Police</b></span></a>
+  </div></div>
+  <div class="wrap">
+    <div class="f-links">
+      <div><h4>Field Services</h4>
+        <a href="https://migovt.org/msp/#field-operations">Field Operations Division</a>
+        <a href="https://migovt.org/msp/#cve">Commercial Vehicle Enforcement</a>
+        <a href="https://migovt.org/msp/#special-operations">Special Operations Division</a>
+        <a href="https://migovt.org/msp/#investigations">Investigations and Intelligence</a></div>
+      <div><h4>The Department</h4>
+        <a href="https://migovt.org/msp/about/">About</a>
+        <a href="https://migovt.org/msp/careers/">Careers</a>
+        <a href="https://migovt.org/msp/contact/">Contact</a>
+        <a href="https://migovt.org/msp/tips/">Submit a tip</a></div>
+      <div><h4>Related sites</h4>
+        <a href="https://migovt.org/ag/">Department of Attorney General</a>
+        <a href="https://migovt.org/courts/">Michigan Courts</a>
+        <a href="https://migovt.org/legislature/">Michigan Legislature</a></div>
+      <div><h4>Emergencies</h4>
+        <span style="font-size:17.5px">In an emergency, call 911.</span></div>
+    </div>
+    <div class="f-fine">This is not an official government website. This site is a simulated government interface and does not represent any real government body or authority.</div>
+  </div>
 </footer>
 
+<button class="top-btn" id="topBtn" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg>TOP</button>
+
 <script>
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
-
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-
-const letters = "010101OSIINTELMICHIGAN";
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
-
-for(let x = 0; x < columns; x++) {
-  drops[x] = 1;
-}
-
-function draw() {
-  ctx.fillStyle = "rgba(5,7,13,0.05)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = "#1f6feb";
-  ctx.font = fontSize + "px monospace";
-
-  for(let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975)
-      drops[i] = 0;
-
-    drops[i]++;
-  }
-}
-
-setInterval(draw, 35);
+const menuBtn = document.getElementById('menuBtn'), nav = document.getElementById('mainNav');
+menuBtn.addEventListener('click', () => {
+  const o = nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', o);
+  menuBtn.textContent = o ? 'Close' : 'Menu';
+});
+const topBtn = document.getElementById('topBtn');
+topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+let tick = false;
+addEventListener('scroll', () => {
+  if (tick) return; tick = true;
+  requestAnimationFrame(() => { topBtn.classList.toggle('show', scrollY > 600); tick = false; });
+}, { passive: true });
 </script>
-
 </body>
 </html>
